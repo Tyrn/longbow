@@ -49,6 +49,8 @@ class TodoItem extends StatelessWidget {
       ),
     );
 
+    return item;    // Dismissible dropped tentatively.
+
     return Dismissible(
       key: AppKeys.todoItem(todo.id),
       onDismissed: onDismissed,
