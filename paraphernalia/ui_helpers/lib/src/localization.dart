@@ -5,23 +5,23 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_architecture_samples/src/localizations/messages_all.dart';
+import 'package:ui_helpers/src/localizations/messages_all.dart';
 import 'package:intl/intl.dart';
 
-class ArchSampleLocalizations {
-  ArchSampleLocalizations(this.locale);
+class AppLocalizations {
+  AppLocalizations(this.locale);
 
   final Locale locale;
 
-  static Future<ArchSampleLocalizations> load(Locale locale) {
+  static Future<AppLocalizations> load(Locale locale) {
     return initializeMessages(locale.toString()).then((_) {
-      return ArchSampleLocalizations(locale);
+      return AppLocalizations(locale);
     });
   }
 
-  static ArchSampleLocalizations of(BuildContext context) {
-    return Localizations.of<ArchSampleLocalizations>(
-        context, ArchSampleLocalizations);
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(
+        context, AppLocalizations);
   }
 
   String get todos => Intl.message(
@@ -193,14 +193,14 @@ class ArchSampleLocalizations {
       );
 }
 
-class ArchSampleLocalizationsDelegate
-    extends LocalizationsDelegate<ArchSampleLocalizations> {
+class AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   @override
-  Future<ArchSampleLocalizations> load(Locale locale) =>
-      ArchSampleLocalizations.load(locale);
+  Future<AppLocalizations> load(Locale locale) =>
+      AppLocalizations.load(locale);
 
   @override
-  bool shouldReload(ArchSampleLocalizationsDelegate old) => false;
+  bool shouldReload(AppLocalizationsDelegate old) => false;
 
   @override
   bool isSupported(Locale locale) =>

@@ -2,7 +2,7 @@
 // Use of this source code is governed by the MIT license that can be found
 // in the LICENSE file.
 
-import 'package:flutter_architecture_samples/optional.dart';
+import 'package:ui_helpers/optional.dart';
 import 'package:longbow/models/models.dart';
 
 List<Todo> todosSelector(AppState state) => state.todos;

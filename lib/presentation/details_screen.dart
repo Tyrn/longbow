@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/containers/edit_todo.dart';
 import 'package:longbow/models/models.dart';
 
@@ -22,7 +22,7 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = ArchSampleLocalizations.of(context);
+    final localizations = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +30,7 @@ class DetailsScreen extends StatelessWidget {
         actions: [
           IconButton(
             tooltip: localizations.deleteTodo,
-            key: ArchSampleKeys.deleteTodoButton,
+            key: AppKeys.deleteTodoButton,
             icon: Icon(Icons.delete),
             onPressed: () {
               onDelete();
@@ -67,14 +67,14 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           child: Text(
                             todo.task,
-                            key: ArchSampleKeys.detailsTodoItemTask,
+                            key: AppKeys.detailsTodoItemTask,
                             style: Theme.of(context).textTheme.headline,
                           ),
                         ),
                       ),
                       Text(
                         todo.note,
-                        key: ArchSampleKeys.detailsTodoItemNote,
+                        key: AppKeys.detailsTodoItemNote,
                         style: Theme.of(context).textTheme.subhead,
                       ),
                     ],
@@ -86,7 +86,7 @@ class DetailsScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        key: ArchSampleKeys.editTodoFab,
+        key: AppKeys.editTodoFab,
         tooltip: localizations.editTodo,
         child: Icon(Icons.edit),
         onPressed: () {

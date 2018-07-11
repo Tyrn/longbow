@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/models/models.dart';
 
 class ExtraActionsButton extends StatelessWidget {
@@ -14,7 +14,7 @@ class ExtraActionsButton extends StatelessWidget {
     this.onSelected,
     this.allComplete = false,
     Key key,
-  }) : super(key: ArchSampleKeys.extraActionsButton);
+  }) : super(key: AppKeys.extraActionsButton);
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +22,16 @@ class ExtraActionsButton extends StatelessWidget {
       onSelected: onSelected,
       itemBuilder: (BuildContext context) => <PopupMenuItem<ExtraAction>>[
             PopupMenuItem<ExtraAction>(
-              key: ArchSampleKeys.toggleAll,
+              key: AppKeys.toggleAll,
               value: ExtraAction.toggleAllComplete,
               child: Text(allComplete
-                  ? ArchSampleLocalizations.of(context).markAllIncomplete
-                  : ArchSampleLocalizations.of(context).markAllComplete),
+                  ? AppLocalizations.of(context).markAllIncomplete
+                  : AppLocalizations.of(context).markAllComplete),
             ),
             PopupMenuItem<ExtraAction>(
-              key: ArchSampleKeys.clearCompleted,
+              key: AppKeys.clearCompleted,
               value: ExtraAction.clearCompleted,
-              child: Text(ArchSampleLocalizations.of(context).clearCompleted),
+              child: Text(AppLocalizations.of(context).clearCompleted),
             ),
           ],
     );

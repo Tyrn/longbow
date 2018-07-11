@@ -4,7 +4,7 @@
 
 import 'package:flutter/widgets.dart';
 
-class ArchSampleKeys {
+class AppKeys {
   // Home Screens
   static final homeScreen = const Key('__homeScreen__');
   static final addTodoFab = const Key('__addTodoFab__');

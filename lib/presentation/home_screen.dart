@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/containers/active_tab.dart';
 import 'package:longbow/containers/extra_actions_container.dart';
 import 'package:longbow/containers/filter_selector.dart';
@@ -14,7 +14,7 @@ import 'package:longbow/localization.dart';
 import 'package:longbow/models/models.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen() : super(key: ArchSampleKeys.homeScreen);
+  HomeScreen() : super(key: AppKeys.homeScreen);
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +30,12 @@ class HomeScreen extends StatelessWidget {
           ),
           body: activeTab == AppTab.todos ? FilteredTodos() : Stats(),
           floatingActionButton: FloatingActionButton(
-            key: ArchSampleKeys.addTodoFab,
+            key: AppKeys.addTodoFab,
             onPressed: () {
               Navigator.pushNamed(context, ArchSampleRoutes.addTodo);
             },
             child: Icon(Icons.add),
-            tooltip: ArchSampleLocalizations.of(context).addTodo,
+            tooltip: AppLocalizations.of(context).addTodo,
           ),
           bottomNavigationBar: TabSelector(),
         );

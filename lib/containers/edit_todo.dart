@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:longbow/actions/actions.dart';
@@ -31,7 +31,7 @@ class EditTodo extends StatelessWidget {
       },
       builder: (BuildContext context, OnSaveCallback onSave) {
         return AddEditScreen(
-          key: ArchSampleKeys.editTodoScreen,
+          key: AppKeys.editTodoScreen,
           onSave: onSave,
           isEditing: true,
           todo: todo,

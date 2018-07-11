@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/models/models.dart';
 
 class FilterButton extends StatelessWidget {
@@ -27,36 +27,36 @@ class FilterButton extends StatelessWidget {
       opacity: visible ? 1.0 : 0.0,
       duration: Duration(milliseconds: 150),
       child: PopupMenuButton<VisibilityFilter>(
-        key: ArchSampleKeys.filterButton,
-        tooltip: ArchSampleLocalizations.of(context).filterTodos,
+        key: AppKeys.filterButton,
+        tooltip: AppLocalizations.of(context).filterTodos,
         onSelected: onSelected,
         itemBuilder: (BuildContext context) =>
             <PopupMenuItem<VisibilityFilter>>[
               PopupMenuItem<VisibilityFilter>(
-                key: ArchSampleKeys.allFilter,
+                key: AppKeys.allFilter,
                 value: VisibilityFilter.all,
                 child: Text(
-                  ArchSampleLocalizations.of(context).showAll,
+                  AppLocalizations.of(context).showAll,
                   style: activeFilter == VisibilityFilter.all
                       ? activeStyle
                       : defaultStyle,
                 ),
               ),
               PopupMenuItem<VisibilityFilter>(
-                key: ArchSampleKeys.activeFilter,
+                key: AppKeys.activeFilter,
                 value: VisibilityFilter.active,
                 child: Text(
-                  ArchSampleLocalizations.of(context).showActive,
+                  AppLocalizations.of(context).showActive,
                   style: activeFilter == VisibilityFilter.active
                       ? activeStyle
                       : defaultStyle,
                 ),
               ),
               PopupMenuItem<VisibilityFilter>(
-                key: ArchSampleKeys.completedFilter,
+                key: AppKeys.completedFilter,
                 value: VisibilityFilter.completed,
                 child: Text(
-                  ArchSampleLocalizations.of(context).showCompleted,
+                  AppLocalizations.of(context).showCompleted,
                   style: activeFilter == VisibilityFilter.completed
                       ? activeStyle
                       : defaultStyle,

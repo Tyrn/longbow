@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/models/models.dart';
 
 typedef OnSaveCallback = Function(String task, String note);
@@ -22,11 +22,11 @@ class AddEditScreen extends StatelessWidget {
 
   AddEditScreen(
       {Key key, @required this.onSave, @required this.isEditing, this.todo})
-      : super(key: key ?? ArchSampleKeys.addTodoScreen);
+      : super(key: key ?? AppKeys.addTodoScreen);
 
   @override
   Widget build(BuildContext context) {
-    final localizations = ArchSampleLocalizations.of(context);
+    final localizations = AppLocalizations.of(context);
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(

@@ -5,7 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/containers/app_loading.dart';
 import 'package:longbow/presentation/loading_indicator.dart';
 
@@ -35,7 +35,7 @@ class StatsCounter extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: Text(
-              ArchSampleLocalizations.of(context).completedTodos,
+              AppLocalizations.of(context).completedTodos,
               style: Theme.of(context).textTheme.title,
             ),
           ),
@@ -43,14 +43,14 @@ class StatsCounter extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 24.0),
             child: Text(
               '$numCompleted',
-              key: ArchSampleKeys.statsNumCompleted,
+              key: AppKeys.statsNumCompleted,
               style: Theme.of(context).textTheme.subhead,
             ),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: Text(
-              ArchSampleLocalizations.of(context).activeTodos,
+              AppLocalizations.of(context).activeTodos,
               style: Theme.of(context).textTheme.title,
             ),
           ),
@@ -58,7 +58,7 @@ class StatsCounter extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 24.0),
             child: Text(
               "$numActive",
-              key: ArchSampleKeys.statsNumActive,
+              key: AppKeys.statsNumActive,
               style: Theme.of(context).textTheme.subhead,
             ),
           )

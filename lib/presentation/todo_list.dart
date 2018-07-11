@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/containers/app_loading.dart';
 import 'package:longbow/containers/todo_details.dart';
 import 'package:longbow/models/models.dart';
@@ -29,14 +29,14 @@ class TodoList extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppLoading(builder: (context, loading) {
       return loading
-          ? LoadingIndicator(key: ArchSampleKeys.todosLoading)
+          ? LoadingIndicator(key: AppKeys.todosLoading)
           : _buildListView();
     });
   }
 
   ListView _buildListView() {
     return ListView.builder(
-      key: ArchSampleKeys.todoList,
+      key: AppKeys.todoList,
       itemCount: todos.length,
       itemBuilder: (BuildContext context, int index) {
         final todo = todos[index];
@@ -62,12 +62,12 @@ class TodoList extends StatelessWidget {
         duration: Duration(seconds: 2),
         backgroundColor: Theme.of(context).backgroundColor,
         content: Text(
-          ArchSampleLocalizations.of(context).todoDeleted(todo.task),
+          AppLocalizations.of(context).todoDeleted(todo.task),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         action: SnackBarAction(
-          label: ArchSampleLocalizations.of(context).undo,
+          label: AppLocalizations.of(context).undo,
           onPressed: () => onUndoRemove(todo),
         )));
   }
@@ -81,16 +81,16 @@ class TodoList extends StatelessWidget {
         .then((removedTodo) {
       if (removedTodo != null) {
         Scaffold.of(context).showSnackBar(SnackBar(
-            key: ArchSampleKeys.snackbar,
+            key: AppKeys.snackbar,
             duration: Duration(seconds: 2),
             backgroundColor: Theme.of(context).backgroundColor,
             content: Text(
-              ArchSampleLocalizations.of(context).todoDeleted(todo.task),
+              AppLocalizations.of(context).todoDeleted(todo.task),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             action: SnackBarAction(
-              label: ArchSampleLocalizations.of(context).undo,
+              label: AppLocalizations.of(context).undo,
               onPressed: () {
                 onUndoRemove(todo);
               },

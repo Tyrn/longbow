@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:longbow/actions/actions.dart';
@@ -36,7 +36,7 @@ class ReduxApp extends StatelessWidget {
         title: ReduxLocalizations().appTitle,
         theme: ArchSampleTheme.theme,
         localizationsDelegates: [
-          ArchSampleLocalizationsDelegate(),
+          AppLocalizationsDelegate(),
           ReduxLocalizationsDelegate(),
         ],
         routes: {

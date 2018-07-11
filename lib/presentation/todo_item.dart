@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/models/models.dart';
 
 class TodoItem extends StatelessWidget {
@@ -22,35 +22,37 @@ class TodoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dismissible(
-      key: ArchSampleKeys.todoItem(todo.id),
-      onDismissed: onDismissed,
-      child: ListTile(
-        onTap: onTap,
-        leading: Checkbox(
-          key: ArchSampleKeys.todoItemCheckbox(todo.id),
-          value: todo.complete,
-          onChanged: onCheckboxChanged,
-        ),
-        title: Hero(
-          tag: '${todo.id}__heroTag',
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              todo.task,
-              key: ArchSampleKeys.todoItemTask(todo.id),
-              style: Theme.of(context).textTheme.title,
-            ),
+    var item = ListTile(
+      onTap: onTap,
+      leading: Checkbox(
+        key: AppKeys.todoItemCheckbox(todo.id),
+        value: todo.complete,
+        onChanged: onCheckboxChanged,
+      ),
+      title: Hero(
+        tag: '${todo.id}__heroTag',
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          child: Text(
+            todo.task,
+            key: AppKeys.todoItemTask(todo.id),
+            style: Theme.of(context).textTheme.title,
           ),
         ),
-        subtitle: Text(
-          todo.note,
-          key: ArchSampleKeys.todoItemNote(todo.id),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: Theme.of(context).textTheme.subhead,
-        ),
       ),
+      subtitle: Text(
+        todo.note,
+        key: AppKeys.todoItemNote(todo.id),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.subhead,
+      ),
+    );
+
+    return Dismissible(
+      key: AppKeys.todoItem(todo.id),
+      onDismissed: onDismissed,
+      child: item,
     );
   }
 }

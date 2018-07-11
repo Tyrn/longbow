@@ -5,7 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_architecture_samples/flutter_architecture_samples.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:longbow/actions/actions.dart';
@@ -21,7 +21,7 @@ class TabSelector extends StatelessWidget {
       converter: _ViewModel.fromStore,
       builder: (context, vm) {
         return BottomNavigationBar(
-          key: ArchSampleKeys.tabs,
+          key: AppKeys.tabs,
           currentIndex: AppTab.values.indexOf(vm.activeTab),
           onTap: vm.onTabSelected,
           items: AppTab.values.map((tab) {
@@ -29,12 +29,12 @@ class TabSelector extends StatelessWidget {
               icon: Icon(
                 tab == AppTab.todos ? Icons.list : Icons.show_chart,
                 key: tab == AppTab.todos
-                    ? ArchSampleKeys.todoTab
-                    : ArchSampleKeys.statsTab,
+                    ? AppKeys.todoTab
+                    : AppKeys.statsTab,
               ),
               title: Text(tab == AppTab.stats
-                  ? ArchSampleLocalizations.of(context).stats
-                  : ArchSampleLocalizations.of(context).todos),
+                  ? AppLocalizations.of(context).stats
+                  : AppLocalizations.of(context).todos),
             );
           }).toList(),
         );
