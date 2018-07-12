@@ -1,0 +1,129 @@
+{
+  "appTitle": "Longbow Power",
+  "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todos": "К исполнению",
+  "@todos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "stats": "Статистика",
+  "@stats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showAll": "Показать все",
+  "@showAll": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showActive": "Показать активные",
+  "@showActive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showCompleted": "Показать завершенные",
+  "@showCompleted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newTodoHint": "Что необходимо выполнить?",
+  "@newTodoHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markAllComplete": "Пометить все как выполненные",
+  "@markAllComplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "markAllIncomplete": "Пометить все как невыполненные",
+  "@markAllIncomplete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clearCompleted": "Удалить выполненные",
+  "@clearCompleted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addTodo": "Добавить пункт",
+  "@addTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editTodo": "Редактировать пункт",
+  "@editTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "saveChanges": "Сохранить изменения",
+  "@saveChanges": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filterTodos": "Фильтр",
+  "@filterTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTodo": "Удалить пункт",
+  "@deleteTodo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todoDetails": "Детализация",
+  "@todoDetails": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyTodoError": "Введите что-нибудь",
+  "@emptyTodoError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notesHint": "Дополнительные замечания...",
+  "@notesHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "completedTodos": "Исполненное",
+  "@completedTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeTodos": "Неисполненное",
+  "@activeTodos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "todoDeleted": "Удалено \"{task}\"",
+  "@todoDeleted": {
+    "type": "text",
+    "placeholders": {
+      "task": {}
+    }
+  },
+  "undo": "Отступить на шаг",
+  "@undo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTodoConfirmation": "Удалить?",
+  "@deleteTodoConfirmation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "Удалить",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Отмена",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-class ArchSampleTheme {
+class AppTheme {
   static get theme {
     final originalTextTheme = ThemeData.dark().textTheme;
     final originalBody1 = originalTextTheme.body1;

@@ -9,12 +9,27 @@ import 'package:ui_helpers/src/localizations/messages_all.dart';
 import 'package:intl/intl.dart';
 
 class AppLocalizations {
+//   AppLocalizations(this.locale);
+
+//   final Locale locale;
+
+//   static Future<AppLocalizations> load(Locale locale) {
+//     return initializeMessages(locale.toString()).then((_) {
+//       return AppLocalizations(locale);
+//     });
+//   }
+
   AppLocalizations(this.locale);
 
   final Locale locale;
 
   static Future<AppLocalizations> load(Locale locale) {
-    return initializeMessages(locale.toString()).then((_) {
+    final String name =
+        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
+
+    return initializeMessages(localeName).then((_) {
+      Intl.defaultLocale = localeName;
       return AppLocalizations(locale);
     });
   }
@@ -23,6 +38,13 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(
         context, AppLocalizations);
   }
+
+  String get appTitle => Intl.message(
+        'Longbow Power',
+        name: 'appTitle',
+        args: [],
+        locale: locale.toString(),
+      );
 
   String get todos => Intl.message(
         'Todos',
@@ -204,5 +226,5 @@ class AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      locale.languageCode.toLowerCase().contains("en");
+      ['en', 'ru'].contains(locale.languageCode.toLowerCase());
 }

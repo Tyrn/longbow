@@ -10,7 +10,6 @@ import 'package:longbow/containers/filter_selector.dart';
 import 'package:longbow/containers/filtered_todos.dart';
 import 'package:longbow/containers/stats.dart';
 import 'package:longbow/containers/tab_selector.dart';
-import 'package:longbow/localization.dart';
 import 'package:longbow/models/models.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,7 +21,7 @@ class HomeScreen extends StatelessWidget {
       builder: (BuildContext context, AppTab activeTab) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(ReduxLocalizations.of(context).appTitle),
+            title: Text(AppLocalizations.of(context).appTitle),
             actions: [
               FilterSelector(visible: activeTab == AppTab.todos),
               ExtraActionsContainer(),
@@ -32,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             key: AppKeys.addTodoFab,
             onPressed: () {
-              Navigator.pushNamed(context, ArchSampleRoutes.addTodo);
+              Navigator.pushNamed(context, AppRoutes.addTodo);
             },
             child: Icon(Icons.add),
             tooltip: AppLocalizations.of(context).addTodo,

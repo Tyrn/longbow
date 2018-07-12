@@ -3,12 +3,12 @@
 // in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ui_helpers/ui_helpers.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:longbow/actions/actions.dart';
 import 'package:longbow/containers/add_todo.dart';
-import 'package:longbow/localization.dart';
 import 'package:longbow/middleware/store_todos_middleware.dart';
 import 'package:longbow/models/models.dart';
 import 'package:longbow/presentation/home_screen.dart';
@@ -33,14 +33,20 @@ class ReduxApp extends StatelessWidget {
     return StoreProvider(
       store: store,
       child: MaterialApp(
-        title: ReduxLocalizations().appTitle,
-        theme: ArchSampleTheme.theme,
+        onGenerateTitle: (BuildContext context) =>
+            AppLocalizations.of(context).appTitle,
+        theme: AppTheme.theme,
         localizationsDelegates: [
           AppLocalizationsDelegate(),
-          ReduxLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('en', ""),
+          Locale("ru", ""),
         ],
         routes: {
-          ArchSampleRoutes.home: (context) {
+          AppRoutes.home: (context) {
             return StoreBuilder<AppState>(
               onInit: (store) => store.dispatch(LoadTodosAction()),
               builder: (context, store) {
@@ -48,7 +54,7 @@ class ReduxApp extends StatelessWidget {
               },
             );
           },
-          ArchSampleRoutes.addTodo: (context) {
+          AppRoutes.addTodo: (context) {
             return AddTodo();
           },
         },
