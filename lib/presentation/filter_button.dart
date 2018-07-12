@@ -16,7 +16,7 @@ class FilterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedOpacity(
+    final winkingButton = AnimatedOpacity(
       opacity: visible ? 1.0 : 0.0,
       duration: Duration(milliseconds: 150),
       child: PopupMenuButton<VisibilityFilter>(
@@ -61,6 +61,11 @@ class FilterButton extends StatelessWidget {
             ],
         icon: Icon(Icons.filter_list),
       ),
+    );
+
+    return IgnorePointer(
+      ignoring: !visible,
+      child: winkingButton,
     );
   }
 }
