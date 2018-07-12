@@ -24,14 +24,20 @@ class ExtraActionsButton extends StatelessWidget {
             PopupMenuItem<ExtraAction>(
               key: AppKeys.toggleAll,
               value: ExtraAction.toggleAllComplete,
-              child: Text(allComplete
+              child: Text(
+                allComplete
                   ? AppLocalizations.of(context).markAllIncomplete
-                  : AppLocalizations.of(context).markAllComplete),
+                  : AppLocalizations.of(context).markAllComplete,
+                style: AppLocalizations.textMenuStyle(context),
+              ),
             ),
             PopupMenuItem<ExtraAction>(
               key: AppKeys.clearCompleted,
               value: ExtraAction.clearCompleted,
-              child: Text(AppLocalizations.of(context).clearCompleted),
+              child: Text(
+                AppLocalizations.of(context).clearCompleted,
+                style: AppLocalizations.textMenuStyle(context),
+              ),
             ),
           ],
     );

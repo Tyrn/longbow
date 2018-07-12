@@ -21,7 +21,10 @@ class HomeScreen extends StatelessWidget {
       builder: (BuildContext context, AppTab activeTab) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(AppLocalizations.of(context).appTitle),
+            title: Text(
+              AppLocalizations.of(context).appTitle,
+              style: AppLocalizations.textTitleStyle(context),
+            ),
             actions: [
               FilterSelector(visible: activeTab == AppTab.todos),
               ExtraActionsContainer(),

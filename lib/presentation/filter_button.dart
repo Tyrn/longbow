@@ -16,13 +16,6 @@ class FilterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final defaultStyle = Theme.of(context).textTheme.body1;
-    final activeStyle = Theme
-        .of(context)
-        .textTheme
-        .body1
-        .copyWith(color: Theme.of(context).accentColor);
-
     return AnimatedOpacity(
       opacity: visible ? 1.0 : 0.0,
       duration: Duration(milliseconds: 150),
@@ -37,9 +30,10 @@ class FilterButton extends StatelessWidget {
                 value: VisibilityFilter.all,
                 child: Text(
                   AppLocalizations.of(context).showAll,
-                  style: activeFilter == VisibilityFilter.all
-                      ? activeStyle
-                      : defaultStyle,
+                  style: AppLocalizations.textMenuStyle(
+                    context,
+                    activeFilter == VisibilityFilter.all,
+                  ),
                 ),
               ),
               PopupMenuItem<VisibilityFilter>(
@@ -47,9 +41,10 @@ class FilterButton extends StatelessWidget {
                 value: VisibilityFilter.active,
                 child: Text(
                   AppLocalizations.of(context).showActive,
-                  style: activeFilter == VisibilityFilter.active
-                      ? activeStyle
-                      : defaultStyle,
+                  style: AppLocalizations.textMenuStyle(
+                    context,
+                    activeFilter == VisibilityFilter.active,
+                  ),
                 ),
               ),
               PopupMenuItem<VisibilityFilter>(
@@ -57,9 +52,10 @@ class FilterButton extends StatelessWidget {
                 value: VisibilityFilter.completed,
                 child: Text(
                   AppLocalizations.of(context).showCompleted,
-                  style: activeFilter == VisibilityFilter.completed
-                      ? activeStyle
-                      : defaultStyle,
+                  style: AppLocalizations.textMenuStyle(
+                    context,
+                    activeFilter == VisibilityFilter.completed,
+                  ),
                 ),
               ),
             ],
