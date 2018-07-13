@@ -3,3 +3,4 @@
 // in the LICENSE file.
 
 enum VisibilityFilter { all, active, completed }
+enum Lang { en, ru }

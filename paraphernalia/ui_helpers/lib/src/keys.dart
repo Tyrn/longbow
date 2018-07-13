@@ -35,6 +35,7 @@ class AppKeys {
   static final allFilter = const Key('__allFilter__');
   static final activeFilter = const Key('__activeFilter__');
   static final completedFilter = const Key('__completedFilter__');
+  static final activeLang = const Key('__activeLang__');
 
   // Stats
   static final statsCounter = const Key('__statsCounter__');

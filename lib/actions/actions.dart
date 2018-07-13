@@ -68,6 +68,17 @@ class UpdateFilterAction {
   }
 }
 
+class UpdateLangAction {
+  final Lang newLang;
+
+  UpdateLangAction(this.newLang);
+
+  @override
+  String toString() {
+    return 'UpdateLangAction{newLang: $newLang}';
+  }
+}
+
 class UpdateTabAction {
   final AppTab newTab;
 

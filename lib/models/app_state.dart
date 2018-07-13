@@ -11,12 +11,14 @@ class AppState {
   final List<Todo> todos;
   final AppTab activeTab;
   final VisibilityFilter activeFilter;
+  final Lang activeLang;
 
   AppState(
       {this.isLoading = false,
       this.todos = const [],
       this.activeTab = AppTab.todos,
-      this.activeFilter = VisibilityFilter.all});
+      this.activeFilter = VisibilityFilter.all,
+      this.activeLang = Lang.en});
 
   factory AppState.loading() => AppState(isLoading: true);
 
@@ -25,12 +27,14 @@ class AppState {
     List<Todo> todos,
     AppTab activeTab,
     VisibilityFilter activeFilter,
+    Lang activeLang,
   }) {
     return AppState(
       isLoading: isLoading ?? this.isLoading,
       todos: todos ?? this.todos,
       activeTab: activeTab ?? this.activeTab,
       activeFilter: activeFilter ?? this.activeFilter,
+      activeLang: activeLang ?? this.activeLang,
     );
   }
 
@@ -39,7 +43,8 @@ class AppState {
       isLoading.hashCode ^
       todos.hashCode ^
       activeTab.hashCode ^
-      activeFilter.hashCode;
+      activeFilter.hashCode ^
+      activeLang.hashCode;
 
   @override
   bool operator ==(Object other) =>
@@ -49,10 +54,12 @@ class AppState {
           isLoading == other.isLoading &&
           todos == other.todos &&
           activeTab == other.activeTab &&
-          activeFilter == other.activeFilter;
+          activeFilter == other.activeFilter &&
+          activeLang == other.activeLang;
 
   @override
   String toString() {
-    return 'AppState{isLoading: $isLoading, todos: $todos, activeTab: $activeTab, activeFilter: $activeFilter}';
+    return 'AppState{isLoading: $isLoading, todos: $todos, activeTab: $activeTab, ' +
+      'activeFilter: $activeFilter, activeLang: $activeLang}';
   }
 }

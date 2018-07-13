@@ -4,6 +4,7 @@
 
 import 'package:ui_helpers/optional.dart';
 import 'package:longbow/models/models.dart';
+import 'package:flutter/foundation.dart';
 
 List<Todo> todosSelector(AppState state) => state.todos;
 
@@ -28,13 +29,21 @@ List<Todo> filteredTodosSelector(
 ) {
   return todos.where((todo) {
     if (activeFilter == VisibilityFilter.all) {
+      debugPrint('******************* VisibilityFilter.all ************************');
       return true;
     } else if (activeFilter == VisibilityFilter.active) {
+      debugPrint('******************* VisibilityFilter.active ************************');
       return !todo.complete;
     } else if (activeFilter == VisibilityFilter.completed) {
+      debugPrint('******************* VisibilityFilter.completed ************************');
       return todo.complete;
     }
   }).toList();
+}
+
+Lang langSelector(Lang newLang) {
+  debugPrint('########################## newLang: $newLang ###########################');
+  return newLang;
 }
 
 Optional<Todo> todoSelector(List<Todo> todos, String id) {

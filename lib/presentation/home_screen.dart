@@ -7,6 +7,7 @@ import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/containers/active_tab.dart';
 import 'package:longbow/containers/extra_actions_container.dart';
 import 'package:longbow/containers/filter_selector.dart';
+import 'package:longbow/containers/lang_selector.dart';
 import 'package:longbow/containers/filtered_todos.dart';
 import 'package:longbow/containers/stats.dart';
 import 'package:longbow/containers/tab_selector.dart';
@@ -27,6 +28,7 @@ class HomeScreen extends StatelessWidget {
             ),
             actions: [
               FilterSelector(visible: activeTab == AppTab.todos),
+              LangSelector(visible: activeTab == AppTab.todos),
               ExtraActionsContainer(),
             ],
           ),

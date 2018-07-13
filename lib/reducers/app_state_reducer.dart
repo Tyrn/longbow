@@ -7,6 +7,7 @@ import 'package:longbow/reducers/loading_reducer.dart';
 import 'package:longbow/reducers/tabs_reducer.dart';
 import 'package:longbow/reducers/todos_reducer.dart';
 import 'package:longbow/reducers/visibility_reducer.dart';
+import 'package:longbow/reducers/lang_reducer.dart';
 
 // We create the State reducer by combining many smaller reducers into one!
 AppState appReducer(AppState state, action) {
@@ -14,6 +15,7 @@ AppState appReducer(AppState state, action) {
     isLoading: loadingReducer(state.isLoading, action),
     todos: todosReducer(state.todos, action),
     activeFilter: visibilityReducer(state.activeFilter, action),
+    activeLang: langReducer(state.activeLang, action),
     activeTab: tabsReducer(state.activeTab, action),
   );
 }

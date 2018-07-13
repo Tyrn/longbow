@@ -42,8 +42,8 @@ class ReduxApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
         ],
         supportedLocales: [
-          Locale('en', ""),
-          Locale("ru", ""),
+          const Locale('en', ""),
+          const Locale("ru", ""),
         ],
         routes: {
           AppRoutes.home: (context) {
