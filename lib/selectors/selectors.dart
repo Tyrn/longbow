@@ -41,11 +41,6 @@ List<Todo> filteredTodosSelector(
   }).toList();
 }
 
-Lang langSelector(Lang newLang) {
-  debugPrint('########################## newLang: $newLang ###########################');
-  return newLang;
-}
-
 Optional<Todo> todoSelector(List<Todo> todos, String id) {
   try {
     return Optional.of(todos.firstWhere((todo) => todo.id == id));

@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             ),
             actions: [
               FilterSelector(visible: activeTab == AppTab.todos),
-              LangSelector(visible: activeTab == AppTab.todos),
+              LangSelector(visible: true),
               ExtraActionsContainer(),
             ],
           ),

@@ -6,9 +6,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/actions/actions.dart';
 import 'package:longbow/models/models.dart';
 import 'package:longbow/presentation/lang_button.dart';
+import 'package:flutter/foundation.dart';
+import 'package:string_scanner/string_scanner.dart';
 
 class LangSelector extends StatelessWidget {
   final bool visible;
@@ -40,10 +43,19 @@ class _ViewModel {
     @required this.activeLang,
   });
 
+  static _langToString(Lang lang) {
+    var scanner = StringScanner(lang.toString());
+
+    scanner.expect('Lang.');
+    return scanner.rest;
+  }
+
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
       onLangSelected: (lang) {
         store.dispatch(UpdateLangAction(lang));
+        debugPrint('+++++++++++++++++++++++++ Lang: ${_langToString(lang)} ++++++++++++++++++++');
+        AppLocalizations.load(Locale(_langToString(lang), ''));
       },
       activeLang: store.state.activeLang,
     );

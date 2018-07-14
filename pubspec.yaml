@@ -13,6 +13,7 @@ dependencies:
     path: ./paraphernalia/ui_helpers
   todos_repository_flutter:
     path: ./paraphernalia/todos_repository_flutter
+  string_scanner: ^1.0.0
 
 dev_dependencies:
   intl_translation:
