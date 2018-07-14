@@ -35,18 +35,18 @@ class LangSelector extends StatelessWidget {
 }
 
 class _ViewModel {
-  final Function(Lang) onLangSelected;
-  final Lang activeLang;
+  final Function(Locale) onLangSelected;
+  final Locale activeLang;
 
   _ViewModel({
     @required this.onLangSelected,
     @required this.activeLang,
   });
 
-  static _langToString(Lang lang) {
+  static _langToString(Locale lang) {
     var scanner = StringScanner(lang.toString());
 
-    scanner.expect('Lang.');
+    // scanner.expect('Locale.');
     return scanner.rest;
   }
 
@@ -54,7 +54,7 @@ class _ViewModel {
     return _ViewModel(
       onLangSelected: (lang) {
         store.dispatch(UpdateLangAction(lang));
-        debugPrint('+++++++++++++++++++++++++ Lang: ${_langToString(lang)} ++++++++++++++++++++');
+        debugPrint('+++++++++++++++++++++++++ Locale: ${_langToString(lang)} ++++++++++++++++++++');
         AppLocalizations.load(Locale(_langToString(lang), ''));
       },
       activeLang: store.state.activeLang,

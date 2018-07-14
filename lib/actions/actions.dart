@@ -3,6 +3,7 @@
 // in the LICENSE file.
 
 import 'package:longbow/models/models.dart';
+import 'package:flutter/material.dart';
 
 class ClearCompletedAction {}
 
@@ -69,7 +70,7 @@ class UpdateFilterAction {
 }
 
 class UpdateLangAction {
-  final Lang newLang;
+  final Locale newLang;
 
   UpdateLangAction(this.newLang);
 

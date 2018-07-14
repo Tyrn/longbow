@@ -4,6 +4,7 @@
 
 import 'package:meta/meta.dart';
 import 'package:longbow/models/models.dart';
+import 'package:flutter/material.dart';
 
 @immutable
 class AppState {
@@ -11,14 +12,14 @@ class AppState {
   final List<Todo> todos;
   final AppTab activeTab;
   final VisibilityFilter activeFilter;
-  final Lang activeLang;
+  final Locale activeLang;
 
   AppState(
       {this.isLoading = false,
       this.todos = const [],
       this.activeTab = AppTab.todos,
       this.activeFilter = VisibilityFilter.all,
-      this.activeLang = Lang.en});
+      this.activeLang = const Locale('en', '')});
 
   factory AppState.loading() => AppState(isLoading: true);
 
@@ -27,7 +28,7 @@ class AppState {
     List<Todo> todos,
     AppTab activeTab,
     VisibilityFilter activeFilter,
-    Lang activeLang,
+    Locale activeLang,
   }) {
     return AppState(
       isLoading: isLoading ?? this.isLoading,

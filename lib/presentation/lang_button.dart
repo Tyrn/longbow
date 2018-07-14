@@ -7,8 +7,8 @@ import 'package:ui_helpers/ui_helpers.dart';
 import 'package:longbow/models/models.dart';
 
 class LangButton extends StatelessWidget {
-  final PopupMenuItemSelected<Lang> onSelected;
-  final Lang activeLang;
+  final PopupMenuItemSelected<Locale> onSelected;
+  final Locale activeLang;
   final bool visible;
 
   LangButton({this.onSelected, this.activeLang, this.visible, Key key})
@@ -19,31 +19,31 @@ class LangButton extends StatelessWidget {
     final winkingButton = AnimatedOpacity(
       opacity: visible ? 1.0 : 0.0,
       duration: Duration(milliseconds: 150),
-      child: PopupMenuButton<Lang>(
+      child: PopupMenuButton<Locale>(
         key: AppKeys.filterButton,
         tooltip: AppLocalizations.of(context).filterTodos,
         onSelected: onSelected,
         itemBuilder: (BuildContext context) =>
-            <PopupMenuItem<Lang>>[
-              PopupMenuItem<Lang>(
+            <PopupMenuItem<Locale>>[
+              PopupMenuItem<Locale>(
                 key: AppKeys.allFilter,
-                value: Lang.en,
+                value: Locale('en', ''),
                 child: Text(
                   'EN',
                   style: AppLocalizations.textMenuStyle(
                     context,
-                    activeLang == Lang.en,
+                    activeLang == Locale('en', ''),
                   ),
                 ),
               ),
-              PopupMenuItem<Lang>(
+              PopupMenuItem<Locale>(
                 key: AppKeys.activeLang,
-                value: Lang.ru,
+                value: Locale('ru', ''),
                 child: Text(
                   'RU',
                   style: AppLocalizations.textMenuStyle(
                     context,
-                    activeLang == Lang.ru,
+                    activeLang == Locale('ru', ''),
                   ),
                 ),
               ),
