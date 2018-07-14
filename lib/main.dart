@@ -2,6 +2,7 @@
 // Use of this source code is governed by the MIT license that can be found
 // in the LICENSE file.
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ui_helpers/ui_helpers.dart';
@@ -30,6 +31,7 @@ class ReduxApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('\\\\\\\\\\\\\\\\\\\ building ReduxApp \\\\\\\\\\\\\\\\\\\\\\');
     return StoreProvider(
       store: store,
       child: MaterialApp(

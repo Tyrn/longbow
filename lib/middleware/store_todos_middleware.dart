@@ -29,6 +29,7 @@ List<Middleware<AppState>> createStoreTodosMiddleware([
     TypedMiddleware<AppState, UpdateTodoAction>(saveTodos),
     TypedMiddleware<AppState, TodosLoadedAction>(saveTodos),
     TypedMiddleware<AppState, DeleteTodoAction>(saveTodos),
+    TypedMiddleware<AppState, UpdateLangAction>(saveTodos),
   ];
 }
 

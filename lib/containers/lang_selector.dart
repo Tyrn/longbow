@@ -43,19 +43,12 @@ class _ViewModel {
     @required this.activeLang,
   });
 
-  static _langToString(Locale lang) {
-    var scanner = StringScanner(lang.toString());
-
-    // scanner.expect('Locale.');
-    return scanner.rest;
-  }
-
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
       onLangSelected: (lang) {
         store.dispatch(UpdateLangAction(lang));
-        debugPrint('+++++++++++++++++++++++++ Locale: ${_langToString(lang)} ++++++++++++++++++++');
-        AppLocalizations.load(Locale(_langToString(lang), ''));
+        debugPrint('+++++++++++++++++++++++++ Locale: ${lang.toString()} ++++++++++++++++++++');
+        AppLocalizations.load(lang);
       },
       activeLang: store.state.activeLang,
     );
