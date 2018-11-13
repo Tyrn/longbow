@@ -6,6 +6,7 @@
 build/
 android/
 ios/.generated/
+*.bin
 packages
 pubspec.lock
 .flutter-plugins
