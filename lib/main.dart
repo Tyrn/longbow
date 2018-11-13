@@ -17,7 +17,7 @@ import 'package:longbow/reducers/app_state_reducer.dart';
 
 void main() {
   // ignore: deprecated_member_use
-  MaterialPageRoute.debugEnableFadingRoutes = true;
+//  MaterialPageRoute.debugEnableFadingRoutes = true;
 
   runApp(ReduxApp());
 }
